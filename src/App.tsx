@@ -79,13 +79,7 @@ function App() {
         [0];
       */
       // const result = getKeysWithHighestValue(lines, 10)
-      // console.log('result', result);
-
-      const parsedKeys = Object.keys(lines).map(x => parseInt(x));
-      const sortedKeys = parsedKeys.sort(function (a, b) {  return b - a;  });
-
-      console.log('sortedKeys', sortedKeys.slice(0,10));
-      
+      // console.log('result', result);      
     };
 
     /* const StopsApi = async () => {
