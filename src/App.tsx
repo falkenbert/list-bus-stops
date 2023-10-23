@@ -7,13 +7,16 @@ type topProps = {
   stops: any
 }
 
-function App() {
+function App({ top10 }: { top10: any }) {
   // Settings data from API
   const [top10Lines, settop10Lines] = useState<topProps[]>([]);
-
+  
   useEffect(() => {
-    const JourneyApi = async (stopArray: any) => {
-      // Getting CORS errors from trafiklab. "Mocking" instead.
+    if (top10) {
+      settop10Lines(top10);
+    } else {
+      const JourneyApi = async (stopArray: any) => {
+      // Getting CORS errors from trafiklab. Read it from local file instead.
       /*const data = await fetch("https://api.sl.se/api2/LineData.json?model=jour&key=[key]&DefaultTransportModeCode=BUS",{
         method: "GET"
       });
@@ -77,6 +80,7 @@ function App() {
     };
     
     StopsApi();
+    }
   }, []);
 
   // Added variable to keep track of open/close items.
@@ -93,7 +97,7 @@ function App() {
       <h1>Top 10 bus-stops with most stops</h1>
       {top10Lines.map((item, index) => (
         <div key={index}>
-          <button onClick={() => toggleOpen(index)}><h2>Line {item.line} with {item.count} stops</h2></button>
+          <button onClick={() => toggleOpen(index)}><h2 data-testid="bus-stop-line" className="lines">Line {item.line} with {item.count} stops</h2></button>
           {openItems[index] && (
           <ul>
             <li className="stopsLabel"><strong>Stops:</strong></li>
