@@ -1,2 +1,39 @@
-# list-bus-stops
-This is an app to calculate the top 10 bus lines.
+# Lists 10 lines with the most bus-stops
+
+Lists all valid stops on a route.
+
+As of this support ticket on [trafiklab forum](https://support.trafiklab.se/org/trafiklabse/d/whats-the-difference-between-linedata-stoparea-and/) the 
+JourneyPattern and stops do not always co-inside. So I have chosen only to display unique stops, that have pertinent stop information.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+## Available Scripts
+
+In the project directory, you can run:
+To install run `npm install`
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+## Learn More
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To learn React, check out the [React documentation](https://reactjs.org/).
